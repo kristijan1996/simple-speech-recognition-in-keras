@@ -58,7 +58,7 @@ On the following graph, model accuracy on test set is shown, where it has reache
 Code is commented in detail, and there should be no problem navigating through it. You download the dataset from Kaggle, choose which words you want to experiment on, place them inside _data_ folder, and tweek the code to suit your needs.
 
 # Real-time application
-At the time of writing this project, there was no suitable way to conduct any real-time NN processing. Microcontrollers are way to slow and have low memory to be able to cope with large, even pretrained networks. Development of tensor processing units (TPUs) was ongoing at the moment, which seems promising for some future work. FPGA implementation was to complex, and therefore avoided. Only accessible hardware which could deal with this was Raspberry Pi, running Python script which would listen on the microphone, and process signals as described above. That was left for another project.
+At the time of writing this project, there was no suitable way to conduct any real-time NN processing. Microcontrollers are way too slow and have low memory to be able to cope with large, even pretrained networks. Development of tensor processing units (TPUs) was ongoing at the moment, which seems promising for some future work. FPGA implementation was to complex, and therefore avoided. Only accessible hardware which could deal with this was Raspberry Pi, running Python script which would listen on the microphone, and process signals as described above. But that was left for another project.
 
 Also, TensorFlow Lite was announced in the early 2019 by Google, which is also worth considering if real-time processing is needed.
 
