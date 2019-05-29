@@ -51,7 +51,7 @@ To be able to experiment with CNN architecture without too much hassle, in _prep
 On the following graph, model accuracy on test set is shown, where it has reached 96% accuracy.
 
 <p align="center">
-          <img width=300 src="/images/acc.png">
+          <img width=400 src="/images/acc.png">
 </p>
 
 # Usage
