@@ -28,15 +28,19 @@ Preprocessing block transforms audio signal into a matrix of fixed dimensions, u
 So, each one of the spoken words listed before has a unique stamp, i.e. unique frequency content in time. On the following image, spectrogram of word _up_ is shown.
 
 <p align="center">
-          <img src="/images/melspectrogram.png">
+          <img width=400 src="/images/melspectrogram.png">
 </p>
 
 From this spectrogram, a _periodogram_ is obtained, which shows the spectral power dependency on the frequencies present in the signal. By filtering periodogram with Mel filter bank, we obtain information about energy content of the signal in each of the zones covered by this bank.
 
 <p align="center">
-          <img src="/images/melbank.png">
+          <img width=400 src="/images/melbank.png">
 </p>
 
 Finally, a discrete cosine transform of logarithmically compressed energy banks is performed, and only the most valuable coeffitients are kept, close to DC value.
 
 After everything mentioned, we are left with a unique matrix of Mel coefficients with fixed dimensions, which can be directly fed into CNN.
+
+<p align="center">
+          <img width=300 src="/images/mfcc.png">
+</p>
