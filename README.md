@@ -44,3 +44,26 @@ After everything mentioned, we are left with a unique matrix of Mel coefficients
 <p align="center">
           <img width=300 src="/images/mfcc.png">
 </p>
+
+To be able to experiment with CNN architecture without too much hassle, in _preprocessing.py_ a subsystem is implemented which crawls all of folders inside _data_ folder (which is empty here, but when working, folders from Kaggle should be places inside), and for each _.wav_ file conducts Mel transform. Each obtained matrix is then stacked into numpy array which is afterwards saved in _npy\_files_ folder, and directly used by Jupyter notebook.
+
+# Performance
+On the following graph, model accuracy on test set is shown, where it has reached 96% accuracy.
+
+<p align="center">
+          <img width=300 src="/images/acc.png">
+</p>
+
+# Usage
+Code is commented in detail, and there should be no problem navigating through it. You download the dataset from Kaggle, choose which words you want to experiment on, place them inside _data_ folder, and tweek the code to suit your needs.
+
+# Real-time application
+At the time of writing this project, there was no suitable way to conduct any real-time NN processing. Microcontrollers are way to slow and have low memory to be able to cope with large, even pretrained networks. Development of tensor processing units (TPUs) was ongoing at the moment, which seems promising for some future work. FPGA implementation was to complex, and therefore avoided. Only accessible hardware which could deal with this was Raspberry Pi, running Python script which would listen on the microphone, and process signals as described above. That was left for another project.
+
+Also, TensorFlow Lite was announced in the early 2019 by Google, which is also worth considering if real-time processing is needed.
+
+# Author
+Kristijan Mitrovic
+
+# License
+Free in every way
