@@ -23,7 +23,7 @@ System design is depicted in the figure bellow.
           <img width=600 src="/images/system.png">
 </p>
 
-Preprocessing block transforms audio signal into a matrix of fixed dimensions, using [Mel frequency cepstrum transform](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/). This approach is based on the fact that the Mel transformation produces unique signal signature in the frequency domain. This is similar to Fourier transform, thanks to which we can observe signal characteristics in frequency domain, from which we can conclude various interesing information about its nature.
+Preprocessing block transforms audio signal into a matrix of fixed dimensions, using [Mel frequency cepstrum transform](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/). This approach is based on the fact that the Mel transformation produces unique signal signature in the frequency domain. This is similar to Fourier transform, thanks to which we can observe signal characteristics in frequency domain, from which we can conclude various interesting information about its nature.
 
 So, each one of the spoken words listed before has a unique stamp, i.e. unique frequency content in time. On the following image, spectrogram of word _up_ is shown.
 
@@ -37,7 +37,7 @@ From this spectrogram, a _periodogram_ is obtained, which shows the spectral pow
           <img width=400 src="/images/melbank.png">
 </p>
 
-Finally, a discrete cosine transform of logarithmically compressed energy banks is performed, and only the most valuable coeffitients are kept, close to DC value.
+Finally, a discrete cosine transform of logarithmically compressed energy banks is performed, and only the most valuable coefficients are kept, close to DC value.
 
 After everything mentioned, we are left with a unique matrix of Mel coefficients with fixed dimensions, which can be directly fed into CNN.
 
@@ -45,7 +45,7 @@ After everything mentioned, we are left with a unique matrix of Mel coefficients
           <img width=300 src="/images/mfcc.png">
 </p>
 
-To be able to experiment with CNN architecture without too much hassle, in _preprocessing.py_ a subsystem is implemented which crawls all of folders inside _data_ folder (which is empty here, but when working, folders from Kaggle should be places inside), and for each _.wav_ file conducts Mel transform. Each obtained matrix is then stacked into numpy array which is afterwards saved in _npy\_files_ folder, and directly used by Jupyter notebook.
+To be able to experiment with CNN architecture without too much hassle, in _preprocessing.py_ a subsystem is implemented which crawls all of folders inside _data_ folder (which is nonexistent here, but when working, folders from Kaggle should be places inside), and for each _.wav_ file conducts Mel transform. Each obtained matrix is then stacked into numpy array which is afterwards saved in _npy\_files_ folder, and directly used by Jupyter notebook.
 
 # Performance
 On the following graph, model accuracy on test set is shown, where it has reached 96% accuracy.
